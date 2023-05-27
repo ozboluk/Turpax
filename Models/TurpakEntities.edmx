@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ozbolukModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Turpax">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tarih Saat" Type="datetime" />
+          <Property Name="Satis tipi" Type="nchar" MaxLength="20" />
+          <Property Name="Filo kodu" Type="nchar" MaxLength="10" />
+          <Property Name="Pompaci" Type="nchar" MaxLength="10" />
+          <Property Name="Plaka" Type="nchar" MaxLength="50" />
+          <Property Name="Pompa" Type="nchar" MaxLength="10" />
+          <Property Name="Urun adi" Type="nchar" MaxLength="10" />
+          <Property Name="Istasyon fiyati" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="Satis fiyati" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="Litre" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="Tutar" Type="decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityContainer Name="ozbolukModelStoreContainer">
+          <EntitySet Name="Turpax" EntityType="Self.Turpax" Schema="ozboluk.site" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ozbolukModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ozbolukEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Turpax" EntityType="ozbolukModel.Turpax" />
+        </EntityContainer>
+        <EntityType Name="Turpax">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tarih_Saat" Type="DateTime" Precision="3" />
+          <Property Name="Satis_tipi" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Filo_kodu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Pompaci" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Plaka" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Pompa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Urun_adi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Istasyon_fiyati" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Satis_fiyati" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Litre" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Tutar" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ozbolukModelStoreContainer" CdmEntityContainer="ozbolukEntities">
+          <EntitySetMapping Name="Turpax">
+            <EntityTypeMapping TypeName="ozbolukModel.Turpax">
+              <MappingFragment StoreEntitySet="Turpax">
+                <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+                <ScalarProperty Name="Litre" ColumnName="Litre" />
+                <ScalarProperty Name="Satis_fiyati" ColumnName="Satis fiyati" />
+                <ScalarProperty Name="Istasyon_fiyati" ColumnName="Istasyon fiyati" />
+                <ScalarProperty Name="Urun_adi" ColumnName="Urun adi" />
+                <ScalarProperty Name="Pompa" ColumnName="Pompa" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="Pompaci" ColumnName="Pompaci" />
+                <ScalarProperty Name="Filo_kodu" ColumnName="Filo kodu" />
+                <ScalarProperty Name="Satis_tipi" ColumnName="Satis tipi" />
+                <ScalarProperty Name="Tarih_Saat" ColumnName="Tarih Saat" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

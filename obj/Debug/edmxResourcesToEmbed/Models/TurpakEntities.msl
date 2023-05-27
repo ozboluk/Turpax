@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ozbolukModelStoreContainer" CdmEntityContainer="ozbolukEntities">
+    <EntitySetMapping Name="Turpax">
+      <EntityTypeMapping TypeName="ozbolukModel.Turpax">
+        <MappingFragment StoreEntitySet="Turpax">
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Litre" ColumnName="Litre" />
+          <ScalarProperty Name="Satis_fiyati" ColumnName="Satis fiyati" />
+          <ScalarProperty Name="Istasyon_fiyati" ColumnName="Istasyon fiyati" />
+          <ScalarProperty Name="Urun_adi" ColumnName="Urun adi" />
+          <ScalarProperty Name="Pompa" ColumnName="Pompa" />
+          <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+          <ScalarProperty Name="Pompaci" ColumnName="Pompaci" />
+          <ScalarProperty Name="Filo_kodu" ColumnName="Filo kodu" />
+          <ScalarProperty Name="Satis_tipi" ColumnName="Satis tipi" />
+          <ScalarProperty Name="Tarih_Saat" ColumnName="Tarih Saat" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

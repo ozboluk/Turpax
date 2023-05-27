@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ozbolukModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Turpax">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tarih Saat" Type="datetime" />
+    <Property Name="Satis tipi" Type="nchar" MaxLength="20" />
+    <Property Name="Filo kodu" Type="nchar" MaxLength="10" />
+    <Property Name="Pompaci" Type="nchar" MaxLength="10" />
+    <Property Name="Plaka" Type="nchar" MaxLength="50" />
+    <Property Name="Pompa" Type="nchar" MaxLength="10" />
+    <Property Name="Urun adi" Type="nchar" MaxLength="10" />
+    <Property Name="Istasyon fiyati" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="Satis fiyati" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="Litre" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="Tutar" Type="decimal" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityContainer Name="ozbolukModelStoreContainer">
+    <EntitySet Name="Turpax" EntityType="Self.Turpax" Schema="ozboluk.site" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,141 @@
+﻿@model IEnumerable<Turpax.Models.Turpax>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="tab-content">
+    <div id="firstTab" class="tab-pane fade in active">
+        <table id="employeeTable" class="table table-striped table-condensed demo table-bordered">
+            <thead>
+                <tr>
+
+                    <th>
+                        Satış Tarihi
+                    </th>
+                    <th>Satıcı</th>
+                    <th>
+                        satış Tipi
+                    </th>
+                    <th>
+                        Filo Kodu
+                    </th>
+                    <th>
+                        Pompacı
+                    </th>
+                    <th>
+                        Plaka
+                    </th>
+                    <th>
+                        Pompa
+                    </th>
+                    <th>
+                        Ürün Adı
+                    </th>
+                    <th>
+                       İndirim 
+                    </th>
+                    <th>
+                        Satış Fiyatı
+                    </th>
+                    <th>
+                        Litre
+                    </th>
+                    <th>
+                        Tutar
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="sortable" class="fs">
+                @foreach (var item in Model)
+                {
+                    <tr style="cursor:pointer" class="item taskSingleInline">
+                        <td>
+                            @Convert.ToDateTime(item.Tarih_Saat).ToString("MM/dd/yyyy HH:mm:ss")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Satis_tipi)
+                        </td>
+                        <td>
+                            Pompacı
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Filo_kodu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pompaci)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Plaka)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pompa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Urun_adi)
+                        </td>
+                        <td>
+                            %5
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Satis_fiyati)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Litre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tutar)
+                        </td>
+                        @*<td>
+                        @Html.ActionLink("Delete", "Delete", new {id=item.Id })
+                    </td>*@
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+<style>
+    td{
+        min-width:100px;
+    }
+     th {
+         min-width:120px;
+     }
+</style>
+@section scripts{
+
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script>
+
+
+
+        function activateJQueryTable() {
+            $("#employeeTable").DataTable();
+
+
+        }
+        $(function () {
+
+            activateJQueryTable();
+
+            $("#sortable").sortable({
+                update: function (event, ui) {
+                    var itemIds = "";
+                    $("#sortable").find(".taskSingleInline").each(function () {
+                        var itemId = $(this).attr("data-taskid");
+                        itemIds = itemIds + itemId + ",";
+
+                    });
+
+                }
+            });
+        });
+
+    </script>
+}
